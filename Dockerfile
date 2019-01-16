@@ -8,7 +8,7 @@ ENV TZ Asia/Shanghai
 ENV TERM xterm
 
 # install percona-xtrabackup
-RUN apt-get update -y && apt-get install -y wget lsb-release vim curl net-tools openssh-client \
+RUN apt-get update -y && apt-get install -y wget lsb-release vim curl net-tools openssh-clients \
     && wget https://repo.percona.com/apt/percona-release_0.1-4.$(lsb_release -sc)_all.deb \
     && dpkg -i percona-release_0.1-4.$(lsb_release -sc)_all.deb \
     && apt-get update -y && apt-get install -y --force-yes percona-xtrabackup-24 && apt-get install -y pmm-client \
